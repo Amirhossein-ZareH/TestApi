@@ -1,0 +1,12 @@
+// فقط buildscript اگر لازم باشه
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.3.0"
+    }
+}
+
+// هیچ pluginManagement ای اینجا نذار
