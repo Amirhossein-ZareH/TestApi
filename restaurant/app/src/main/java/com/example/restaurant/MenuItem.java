@@ -1,7 +1,5 @@
 package com.example.restaurant;
 
-import com.example.restaurant.MenuItem;
-
 public class MenuItem {
     private int id;
     private String name;

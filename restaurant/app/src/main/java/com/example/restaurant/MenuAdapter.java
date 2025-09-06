@@ -21,15 +21,17 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     @NonNull
     @Override
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
+        // هر آیتم منو از لایوت item_menu.xml
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_menu, parent, false);
         return new MenuViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
         MenuItem item = menuList.get(position);
-        holder.text1.setText(item.getName());
-        holder.text2.setText("Price: " + item.getPrice());
+        holder.nameText.setText(item.getName());
+        holder.priceText.setText(item.getPrice());
     }
 
     @Override
@@ -37,13 +39,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         return menuList.size();
     }
 
+    // ViewHolder برای RecyclerView
     static class MenuViewHolder extends RecyclerView.ViewHolder {
-        TextView text1, text2;
+        TextView nameText, priceText;
 
         public MenuViewHolder(@NonNull View itemView) {
             super(itemView);
-            text1 = itemView.findViewById(android.R.id.text1);
-            text2 = itemView.findViewById(android.R.id.text2);
+            nameText = itemView.findViewById(R.id.textName);
+            priceText = itemView.findViewById(R.id.textPrice);
         }
     }
 }
